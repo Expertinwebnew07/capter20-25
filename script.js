@@ -28,6 +28,7 @@ let str=""
       document.querySelector(".blanck").innerText=capitalizedStr;
     }/// only First letter Capital using inputbox
        else if (str === "Beter formating") {
+        blanck.innerText +=""
         let string1 = excess_city.value;
         let Str = string1.charAt().toUpperCase() + string1.slice().toLowerCase();
         blanck.innerText +=(Str);
@@ -67,6 +68,14 @@ let str=""
   })
   
  })
+  
+document.querySelector(".cleardispaly").onclick=()=>{
+   document.querySelector(".blanck").innerHTML="";
+}
+let clearinput=document.querySelector(".input-clear");
+clearinput.addEventListener('click',()=>{
+  excess_city.value=""
+})
 
 
 
