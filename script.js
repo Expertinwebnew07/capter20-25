@@ -58,13 +58,33 @@ let str=""
         }
         // data add and check
       }else if (str === "Check City In list") {
-        let check=excess_city.split('');
-        check.forEach(e=>{
-          console.log(e)
-        })
-         
+        blanck.innerText =""
+        let a = excess_city.value;
+        a = typeof a === 'string' ? a.toLowerCase() : ""; // Convert 'a' to lowercase if it's a string
+        
+        // console.log(a+"a");
+        
+        let cityExists = false; // suppose it is not exist    
+        
+        for (let i = 0; i < cities.length; i++) {
+            cities[i] = typeof cities[i] === 'string' ? cities[i].toLowerCase() : ""; //  cities to lowercase
+            // console.log(i);
+            if (cities[i] === a) {
+                cityExists = true; //  suppose it is exist
+                break; // Exit the loop once the city is found
+            }
+        }
+        
+        if (cityExists) {
+            blanck.innerText += ` "${a}" =>This value is also exist in data `;
+        }else if(a===""){
+          blanck.innerText += `Input field has not data.You can add data`;
+        }
+         else {
+            blanck.innerText += ` "${a}" This value is NOT also exist in data. You can add data.`;
+        }
+    }
     
-      }
   })
   
  })
