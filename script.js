@@ -30,7 +30,7 @@ let str=""
        else if (str === "Beter formating") {
         blanck.innerText +=""
         let string1 = excess_city.value;
-        let Str = string1.charAt().toUpperCase() + string1.slice().toLowerCase();
+        let Str = string1.charAt(0).toUpperCase() + string1.slice(1).toLowerCase();
         blanck.innerText +=(Str);
     }
     
@@ -83,7 +83,14 @@ let str=""
          else {
             blanck.innerText += ` "${a}" This value is NOT also exist in data. You can add data.`;
         }
-    }
+    }else if(str === "Replace This Word"){
+      alert("Your word is changing very soon.")
+       let a=city
+       console.log(a.split( " "))
+      for(let i=0;i<=a.length-1;++i){
+      }
+      
+ }
     
   })
   
