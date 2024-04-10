@@ -1,5 +1,5 @@
  let buttons=document.querySelectorAll("#do-it");
- let city=document.querySelector("#cities").innerText ;
+ let city=document.querySelectorAll("#cities").innerText ;
  let blanck=document.querySelector(".blanck");
  let cities=["Faisalabad","Lahore","Karachi","Islamabad","Kashmir"]
 //  console.log(cities)
@@ -83,15 +83,38 @@ let str=""
          else {
             blanck.innerText += ` "${a}" This value is NOT also exist in data. You can add data.`;
         }
-    }else if(str === "Replace This Word"){
-      alert("Your word is changing very soon.")
-       let a=city
-       console.log(a.split( " "))
-      for(let i=0;i<=a.length-1;++i){
+    }else if(str === "Check Word"){
+      blanck.innerText =""
+      let cities = document.querySelectorAll(".cities");
+      let array = [];
+      let cityTexts = [];
+
+function removedot(text) {
+    if (text.endsWith(".")) {
+        return text.slice(0, -1);
+    } else {
+        return text;
+    }
+}
+
+cities.forEach((city) => {
+    let cityText = city.textContent;
+    let words = cityText.split(" ");
+    words = words.map(removedot);
+    cityTexts.push(words.join(" "));
+});
+
+cityTexts.forEach(cityText => {
+    let words = cityText.split(" ");
+    array = array.concat(words);
+    if(array===excess_city){
       }
-      
- }
-    
+});
+
+console.log(array);
+    }
+   
+ 
   })
   
  })
