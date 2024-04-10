@@ -1,5 +1,5 @@
  let buttons=document.querySelectorAll("#do-it");
- let city=document.querySelectorAll("#cities").innerText ;
+ let city=document.querySelector("#cities").innerText ;
  let blanck=document.querySelector(".blanck");
  let cities=["Faisalabad","Lahore","Karachi","Islamabad","Kashmir"]
 //  console.log(cities)
@@ -8,7 +8,7 @@ let excess_city=document.querySelector(".inputfield");
 let str=""
  
  buttons.forEach((button)=>{
- button.addEventListener('click'||'DOMContentLoaded',e=>{
+ button.addEventListener('click',e=>{
     str=button.innerHTML;
     //LowerCase
     if(str==="Convert in LowerCase"){
@@ -86,29 +86,33 @@ let str=""
     }else if(str === "Check Word"){
       blanck.innerText =""
       let cities = document.querySelectorAll(".cities");
-      let array = [];
-      let cityTexts = [];
 
-function removedot(text) {
+                      // THis part for removing . in text ==>> 
+// declear a blank array
+      let cityTexts = [];
+//  function for deleair last index as=> .
+function dot(text) {
     if (text.endsWith(".")) {
+//0 is index and  and -1 meands start from right side 
         return text.slice(0, -1);
     } else {
         return text;
     }
 }
-
+// excess the text 
 cities.forEach((city) => {
     let cityText = city.textContent;
     let words = cityText.split(" ");
-    words = words.map(removedot);
+    words = words.map(dot);
     cityTexts.push(words.join(" "));
 });
 
+// This part is for combine words cut of  space ===>>>
+let array = [];
 cityTexts.forEach(cityText => {
     let words = cityText.split(" ");
     array = array.concat(words);
-    if(array===excess_city){
-      }
+    
 });
 
 console.log(array);
