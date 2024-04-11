@@ -115,9 +115,35 @@ cityTexts.forEach(cityText => {
     
 });
 
-console.log(array);
-    }
-   
+ 
+ 
+let words = array;
+let searchString = excess_city.value;
+console.log(typeof searchString); // Check the type of searchString
+
+for (let i = 0; i < searchString.length; i++) {
+  console.log(searchString[i]); // Log each character in searchString
+}
+
+let found = false;
+for (let i = 0; i < words.length; i++) {
+  if (words[i].toLowerCase() === searchString.toLowerCase()) {
+    found = true;
+    break; // Once found, no need to continue looping
+  }
+}
+
+if (found) {
+  console.log(`The word "${searchString}" is found in the array.`);
+} else {
+  console.log(`The word "${searchString}" is not found in the array.`);
+}
+
+
+
+ 
+
+}
  
   })
   
