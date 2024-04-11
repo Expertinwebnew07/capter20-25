@@ -83,7 +83,8 @@ let str=""
          else {
             blanck.innerText += ` "${a}" This value is NOT also exist in data. You can add data.`;
         }
-    }else if(str === "Check Word"){
+    }else if(str === "Check Word")
+    {
       blanck.innerText =""
       let cities = document.querySelectorAll(".cities");
 
@@ -91,64 +92,72 @@ let str=""
 // declear a blank array
       let cityTexts = [];
 //  function for deleair last index as=> .
-function dot(text) {
+              function dot(text) {
     if (text.endsWith(".")) {
 //0 is index and  and -1 meands start from right side 
         return text.slice(0, -1);
     } else {
         return text;
     }
-}
+               }
 // excess the text 
-cities.forEach((city) => {
+          cities.forEach((city) => {
     let cityText = city.textContent;
     let words = cityText.split(" ");
     words = words.map(dot);
     cityTexts.push(words.join(" "));
-});
+          });
 
 // This part is for combine words cut of  space ===>>>
-let array = [];
-cityTexts.forEach(cityText => {
+          let array = [];
+          cityTexts.forEach(cityText => {
     let words = cityText.split(" ");
     array = array.concat(words);
     
-});
+          });
 
  
  
-let words = array;
-let searchString = excess_city.value;
-console.log(typeof searchString); // Check the type of searchString
+          let words = array;
+          let searchString = excess_city.value;
+          console.log(typeof searchString); // Check the type of searchString
 
-for (let i = 0; i < searchString.length; i++) {
+          for (let i = 0; i < searchString.length; i++) {
   console.log(searchString[i]); // Log each character in searchString
-}
+          }
 
-let found = false;
-for (let i = 0; i < words.length; i++) {
-  if (words[i].toLowerCase() === searchString.toLowerCase()) {
+          let found = false;
+          for (let i = 0; i < words.length; i++) {
+  if (words[i].toLowerCase() ===
+   searchString.toLowerCase()) {
     found = true;
     break; // Once found, no need to continue looping
   }
-}
+          }
 
-if (found) {
-  console.log(`The word "${searchString}" is found in the array.`);
-} else {
-  console.log(`The word "${searchString}" is not found in the array.`);
-}
+          if (found) {
+            blanck.innerText +=`The word "${searchString}" is found in the array.`;
+          } else {
+            blanck.innerText +=`The word "${searchString}" is not found in the array.`;
+          }
+
+    }
+
+ 
+
+
+  
+  
+
+ 
+})
+//////////Tostify alert
+ 
+
 
 
 
  
-
-}
- 
-  })
-  
- })
-  
 document.querySelector(".cleardispaly").onclick=()=>{
    document.querySelector(".blanck").innerHTML="";
 }
@@ -160,14 +169,13 @@ clearinput.addEventListener('click',()=>{
 
 
 
+ 
 
 
 
 
 
 
-
- // 
-//  console.log(buttons)
+})
 
 
