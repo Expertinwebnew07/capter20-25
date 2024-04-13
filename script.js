@@ -134,9 +134,9 @@ for (let i = 0; i < words.length; i++) {
 }
 
 if (found) {
-  console.log(`The word "${searchString}" is found in the array.`);
+  blanck.innerText =`The word "${searchString}" is found in the array.`;
 } else {
-  console.log(`The word "${searchString}" is not found in the array.`);
+  blanck.innerText =`The word "${searchString}" is not found in the array.`;
 }
 
 
