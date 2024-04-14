@@ -179,29 +179,30 @@ if (found) {
 
 
  
-
-}else if(str === "Replace This Word"){
-        console.log("Replace this word as you Know.")
-        function check(){
-          for(let i=0;i<=city.length;i++){
-            console.log(city[i]);
-             // declear a blank array
-      let cityTexts = [];
-      //  function for deleair last index as=> .
-      function dot(text) {
-          if (text.endsWith(".")) {
-      //0 is index and  and -1 meands start from right side 
-              return text.slice(0, -1);
-          } else {
-              return text;
-          }
-      }
-      console.log(cityTexts)
-       
-          }
-        }
-        check();
+// Replace this Word
+}else if (str === "Replace This Word") {
+  // console.log("Replace this word as you want.");
+  let originalText = city; // Store original text
+  let replacementWord = prompt("Write the word you want to replace:").toLowerCase();
+  let newWord =excess_city.value;
+  
+  // Use regular expression to replace all occurrences of the word globally
+  let regex = new RegExp("\\b" + replacementWord + "\\b", "gi");
+  let modifiedText = originalText.replace(regex, newWord);
+  blanck.innerText = modifiedText;
+  if(regex!==replacementWord){
+    toastr["error"]("Data has not in this paragraph.", "Sorry \u{1F91E}")
+    toastr.options = {
+    positionClass: "toast-bottom-left",
+    showDuration: "300",
+    hideDuration: "1000",
+    timeOut: "5000",
+    extendedTimeOut: "1000",
+    
+ }
 }
+}
+
  
   })
   
