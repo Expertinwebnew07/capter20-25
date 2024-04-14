@@ -10,13 +10,14 @@ let str=""
  buttons.forEach((button)=>{
  button.addEventListener('click',e=>{
     str=button.innerHTML;
-    //LowerCase
+       //1 LowerCase
     if(str==="Convert in LowerCase"){
       document.querySelector(".blanck").innerText=city.toLowerCase();
-    }//toUpperCase
+     
+    }     //2 toUpperCase
     else if(str==="Convert in UperCase"){
       document.querySelector(".blanck").innerText=city.toUpperCase();
-    }//Capitalization
+    }       //3 Capitalization
     else if(str==="Convert in Capitalize"){
       function firstLetter(str) {
         return str.replace(/\b\w/g, function(char) {
@@ -26,7 +27,7 @@ let str=""
       let str = city;
       let capitalizedStr = firstLetter(str);
       document.querySelector(".blanck").innerText=capitalizedStr;
-    }/// only First letter Capital using inputbox
+    }            ///4 Beter formating  only First letter Capital using inputbox
        else if (str === "Beter formating") {
         blanck.innerText +=""
         let string1 = excess_city.value;
@@ -34,29 +35,35 @@ let str=""
         blanck.innerText +=(Str);
     }
     
-    // cities in array
+                      //5 All cities in array
     else if(str==="Print All City"){
       blanck.innerText =""
        for(let i=0; i < cities.length;i=1+i){
         blanck.innerText += (i + 1) + ') ' + cities[i] + '\n';  
 
       }
-      // input from inputbox
+                                  //6 Add Your City 
      } else if(str==="Add Your City in List"){
-           blanck.innerText =""
+           blanck.innerText +=""
        let excess_city=document.querySelector(".inputfield").value;
-            if(excess_city===''){
-              blanck.innerText +="Please Enter next city name."+ '\n';
-       
-            } 
-            else{
-             blanck.innerText =""
-             let obj=cities.concat(excess_city.split("-"));
-                 for(let i=1; i<obj.length+1;i=1+i){
-                   blanck.innerText +=((i+')')+obj[i-1] + '\n')
-                  }
+           for(let i=0;i<=cities.length-1;i++){
+           if( cities[i].toLowerCase() ===excess_city.toLowerCase()){
+            blanck.innerText +="This city is already exist in data.Please add another data";
+            break;
+           } if(excess_city===''){
+            blanck.innerText +="Please Enter next city name.You input is Blanck."+ '\n';
+            break;
+          }if(cities[i].toLowerCase() !==excess_city.toLowerCase()){
+           let obj=cities.concat(excess_city.split("-"));
+           blanck.innerText +=""
+               for(let i=1; i<obj.length+1;i=1+i){
+                 blanck.innerText +=((i+')')+obj[i-1] + '\n')
+                 }
+                break;
+           }
+           
         }
-        // data add and check
+                                        //7 data add and check
       }else if (str === "Check City In list") {
         blanck.innerText =""
         let a = excess_city.value;
@@ -76,14 +83,16 @@ let str=""
         }
         
         if (cityExists) {
-            blanck.innerText += ` "${a}" =>This value is also exist in data `;
+            blanck.innerText += `👉 "${a}"   =>This value is also exist in data    \u{1F448}`;
         }else if(a===""){
-          blanck.innerText += `Input field has not data.You can add data`;
+          blanck.innerText += `\u{1F60D} Input field has not data.You can add data`;
         }
          else {
-            blanck.innerText += ` "${a}" This value is NOT also exist in data. You can add data.`;
+            blanck.innerText += ` "${a}" \u{1F90C} This value is NOT also exist in data. You can add data.`;
         }
-    }else if(str === "Check Word"){
+    }
+    ////   Check Word cities in array
+    else if(str === "Check Word"){
       blanck.innerText =""
       let cities = document.querySelectorAll(".cities");
 
@@ -134,15 +143,64 @@ for (let i = 0; i < words.length; i++) {
 }
 
 if (found) {
-  blanck.innerText =`The word "${searchString}" is found in the array.`;
-} else {
-  blanck.innerText =`The word "${searchString}" is not found in the array.`;
+  blanck.innerText =`The word "${searchString}" is found in the array. `;
+
+  // Toasted type code
+   toastr["success"]("\u{1F44D} Your Task is completed now", "Success")
+   toastr.options = {
+  "positionClass": "toast-top-right",
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
 }
 
+} else {
+  blanck.innerText =`The word "${searchString}" is not found in the array.`;
+
+  // Toasted type code
+   toastr["error"]("Data has not been this type of word.", "Sorry \u{1F91E}")
+   toastr.options = {
+  "positionClass": "toast-top-left",
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+}
 
 
  
 
+}else if(str === "Replace This Word"){
+        console.log("Replace this word as you Know.")
+        function check(){
+          for(let i=0;i<=city.length;i++){
+            console.log(city[i]);
+             // declear a blank array
+      let cityTexts = [];
+      //  function for deleair last index as=> .
+      function dot(text) {
+          if (text.endsWith(".")) {
+      //0 is index and  and -1 meands start from right side 
+              return text.slice(0, -1);
+          } else {
+              return text;
+          }
+      }
+      console.log(cityTexts)
+       
+          }
+        }
+        check();
 }
  
   })
