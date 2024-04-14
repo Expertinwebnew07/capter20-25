@@ -1,5 +1,5 @@
  let buttons=document.querySelectorAll("#do-it");
- let city=document.querySelector("#cities").innerText ;
+ let city=document.querySelector("#cities").innerText+"\u{270C}" ;
  let blanck=document.querySelector(".blanck");
  let cities=["Faisalabad","Lahore","Karachi","Islamabad","Kashmir"]
 //  console.log(cities)
