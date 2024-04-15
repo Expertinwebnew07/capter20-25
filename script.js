@@ -184,23 +184,11 @@ if (found) {
   // console.log("Replace this word as you want.");
   let originalText = city; // Store original text
   let replacementWord = prompt("Write the word you want to replace:").toLowerCase();
-  let newWord =excess_city.value;
-  
+  let newWord =(excess_city.value).toLowerCase();
   // Use regular expression to replace all occurrences of the word globally
-  let regex = new RegExp("\\b" + replacementWord + "\\b", "gi");
-  let modifiedText = originalText.replace(regex, newWord);
+  let regex = new RegExp("\\b" + replacementWord  + "\\b", "gi");
+  let modifiedText = (originalText.replace(regex, newWord));
   blanck.innerText = modifiedText;
-  if(regex!==replacementWord){
-    toastr["error"]("Data has not in this paragraph.", "Sorry \u{1F91E}")
-    toastr.options = {
-    positionClass: "toast-bottom-left",
-    showDuration: "300",
-    hideDuration: "1000",
-    timeOut: "5000",
-    extendedTimeOut: "1000",
-    
- }
-}
 }
 
  
