@@ -88,7 +88,7 @@ let str=""
           blanck.innerText += `\u{1F60D} Input field has not data.You can add data`;
         }
          else {
-            blanck.innerText += ` "${a}" \u{1F90C} This value is NOT also exist in data. You can add data.`;
+            blanck.innerText += ` " ${a}"  This value is NOT also exist in data. You can add data.`;
         }
     }
     ////   Check Word cities in array
