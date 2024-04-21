@@ -29,7 +29,7 @@ let str=""
       document.querySelector(".blanck").innerText=capitalizedStr;
     }            ///4 Beter formating  only First letter Capital using inputbox
        else if (str === "Beter formating") {
-        blanck.innerText +=""
+        document.querySelector(".blanck").innerText = "";
         let string1 = excess_city.value;
         let Str = string1.charAt(0).toUpperCase() + string1.slice(1).toLowerCase();
         blanck.innerText +=(Str);
@@ -37,25 +37,25 @@ let str=""
     
                       //5 All cities in array
     else if(str==="Print All City"){
-      blanck.innerText =""
+      document.querySelector(".blanck").innerText = "";
        for(let i=0; i < cities.length;i=1+i){
         blanck.innerText += (i + 1) + ') ' + cities[i] + '\n';  
 
       }
                                   //6 Add Your City 
      } else if(str==="Add Your City in List"){
-           blanck.innerText +=""
+      document.querySelector(".blanck").innerText = "";
        let excess_city=document.querySelector(".inputfield").value;
            for(let i=0;i<=cities.length-1;i++){
            if( cities[i].toLowerCase() ===excess_city.toLowerCase()){
             blanck.innerText +="This city is already exist in data.Please add another data";
             break;
            } if(excess_city===''){
-            blanck.innerText +="Please Enter next city name.You input is Blanck."+ '\n';
+            blanck.innerText +="Please Enter next city name.Your box input is Blanck."+ '\n';
             break;
           }if(cities[i].toLowerCase() !==excess_city.toLowerCase()){
            let obj=cities.concat(excess_city.split("-"));
-           blanck.innerText +=""
+           document.querySelector(".blanck").innerText = "";
                for(let i=1; i<obj.length+1;i=1+i){
                  blanck.innerText +=((i+')')+obj[i-1] + '\n')
                  }
